@@ -1,4 +1,4 @@
-// Question posted on edabit.com on 02/14/20
+// Question posted on edabit.com on 02/14/21
 
 function battingAvg(arr) {
   let hits = 0;

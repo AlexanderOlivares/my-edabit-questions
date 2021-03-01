@@ -1,18 +1,18 @@
-const { expect } = require("@jest/globals");
-const recordTemps = require("./index");
+// posted on edabit.com on 02/28/21
 
-// describe("test for recordTemps", () => {
-//   it("test 1", () => {
-//     expect(
-//       battingAvg([
-//         [0, 0],
-//         [1, 3],
-//         [2, 2],
-//         [0, 4],
-//         [1, 5],
-//       ])
-//     ).toEqual(".286");
-//   });
+function recordTemps(records, currentWeek) {
+  let updatedRecords = [];
+  for (let i = 0; i < records.length; i++) {
+    if (currentWeek[i][0] < records[i][0]) {
+      updatedRecords.push([currentWeek[i][0], records[i][1]]);
+    } else if (currentWeek[i][1] > records[i][1]) {
+      updatedRecords.push([records[i][0], currentWeek[i][1]]);
+    } else {
+      updatedRecords.push(records[i]);
+    }
+  }
+  return updatedRecords;
+}
 
 describe("test for recordTemps", () => {
   it("test 1", () => {
@@ -534,3 +534,5 @@ describe("test for recordTemps", () => {
     ]);
   });
 });
+
+module.exports = recordTemps;
