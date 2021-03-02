@@ -1,12 +1,16 @@
 # Record Temperatures
 
-You are given two arrays that each represent weather data for the days of the week `['Sunday', 'Monday', ..., 'Saturday']`.
+You are given two arrays that each contain data that represents the min and max weather temperatures for each day of the week.
 
-The records array contains record low/high temperatures for that day of the week.`[[25 (record low), 102 (record high)], ...]`
+The records array contains the all-time record low/high temperatures for that day of the week.
+`[[record low, record high], ...]`
 
-The current week array contains the daily lows/highs `[[40 (daily low), 82 (daily high)], ...]` for each day of the current week.
+The current week array contains the daily low/high temperatures for each day of the current week.
+`[[daily low, daily high], ...]`
 
-Compare the daily low/high temperatures of the current week to the record lows/highs and return an array with the updated record temperatures;
+A daily high temperature is considered a new record high if it is higher than the record high for that day of the week. A daily low temperature is considered a new record low if it is lower than the record low for that day of the week.
+
+Compare the daily low/high temperatures of the current week to the record lows/highs and return an array with the updated record temperatures.
 
 - there may be multiple record temperatures in a week
 - if there are no broken records return the original records array
